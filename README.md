@@ -77,8 +77,8 @@ OR use Live Server in VS Code.
 Project Documentation
 Screenshots
 <img src="main screen.png" width="500">
-<img src="features.png" width="500">
-<img src="skill barter.png" width="500">
+<img src="Features.png" width="500">
+<img src="Skill barter.png" width="500">
 Diagrams
 System Architecture:
 <img src="architecture diagram.png" width="500">
@@ -86,7 +86,7 @@ System Architecture:
 
 Project Demo
 Video
-https://youtu.be/iGnMKOm5XFA
+
 
 
 AI Tools Used
