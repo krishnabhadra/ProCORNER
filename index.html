@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProCorner | The Student OS</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    
+    <audio id="bell-sound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+
+    <div class="hero-container">
+
+        <section id="landing-view">
+            <nav>
+                <div class="logo">Pro<span>Corner</span></div>
+                <button class="begin-btn" onclick="openModal()">Begin Now <i class="ri-arrow-right-line"></i></button>
+            </nav>
+
+            <header class="hero-content">
+                <div class="glass-card fade-in">
+                    <span class="badge">For KTU Students</span>
+                    <h1>Engineering Life, <br><span class="gradient-text">Simplified.</span></h1>
+                    <p>
+                        <strong>Our Aim:</strong> Engineering life is a race against time. We exist to bridge the gap between the vast, complex depths of the KTU syllabus and the limited hours you have in a day.
+Instead of struggling alone, we provide a smarter way to learn. Our platform utilizes cutting-edge AI to analyze your syllabus and summarize dense notes into bite-sized concepts. Furthermore, we believe in the power of community—our peer-to-peer skill barter network connects you with fellow students
+                    </p>
+                </div>
+            </header>
+
+            <section class="features-dock">
+                <div class="feature-item">
+                    <i class="ri-file-search-line"></i>
+                    <div><h3>Syllabus Analyzer</h3><small>Track Module Progress</small></div>
+                </div>
+                <div class="feature-item">
+                    <i class="ri-brain-line"></i>
+                    <div><h3>Quiz Generator</h3><small>AI-Generated MCQs</small></div>
+                </div>
+                <div class="feature-item">
+                    <i class="ri-group-line"></i>
+                    <div><h3>Skill Barter</h3><small>P2P Learning Network</small></div>
+                </div>
+                  <div class="feature-item">
+                    <i class="ri-group-line"></i>
+                    <div><h3>Notes analyzer</h3><small>efficient note generation</small></div>
+                </div>
+                 <div class="feature-item">
+                    <i class="ri-group-line"></i>
+                    <div><h3>Question Ppaer analyzer</h3><small>efficient way of previous year question papers</small></div>
+                </div>
+            </section>
+        </section>
+
+        <section id="dashboard-view" class="hidden">
+            <nav class="dash-nav">
+                <div class="logo">Pro<span>Corner</span></div>
+                <div class="user-profile">
+                    <span id="user-badge" class="badge">S6 ECE</span>
+                    <div class="avatar"><i class="ri-user-smile-line"></i></div>
+                </div>
+            </nav>
+        
+            <div class="dashboard-container">
+                <h2 class="welcome-text">Select your tool</h2>
+                
+                <div class="bento-grid">
+                    <div class="tool-card" onclick="openSyllabusView()">
+                        <div class="card-icon"><i class="ri-file-list-3-line"></i></div>
+                        <h3>Syllabus Extractor</h3>
+                        <p>Chat with your syllabus & download PDFs.</p>
+                    </div>
+        
+                    <div class="tool-card" onclick="openNotesView()">
+                        <div class="card-icon"><i class="ri-sticky-note-line"></i></div>
+                        <h3>Notes Analyzer</h3>
+                        <p>AI summaries & key concept highlighting.</p>
+                    </div>
+        
+                    <div class="tool-card" onclick="openQPView()">
+                        <div class="card-icon"><i class="ri-file-paper-2-line"></i></div>
+                        <h3>QP Analyzer</h3>
+                        <p>Predict repeated questions from previous years.</p>
+                    </div>
+        
+                    <div class="tool-card" onclick="openQuizView()">
+                        <div class="card-icon"><i class="ri-brain-line"></i></div>
+                        <h3>Quiz Mode</h3>
+                        <p>Generate MCQs instantly from your subjects.</p>
+                    </div>
+
+                    <div class="tool-card" onclick="openExamCracker()">
+                        <div class="card-icon"><i class="ri-trophy-line"></i></div>
+                        <h3>Comp. Exam Cracker</h3>
+                        <p>Ace GATE, CAT & other competitive exams.</p>
+                    </div>
+
+                    <div class="tool-card" onclick="openStudyPlanner()">
+                        <div class="card-icon"><i class="ri-calendar-check-line"></i></div>
+                        <h3>Study Planner</h3>
+                        <p>Organize schedules & track daily goals.</p>
+                    </div>
+        
+                    <div class="tool-card featured" onclick="openSkillBarter()">
+                        <div class="card-icon"><i class="ri-shake-hands-line"></i></div>
+                        <h3>Skill Barter</h3>
+                        <p>Connect with peers. Teach what you know, learn what you don't.</p>
+                        <div class="live-indicator"><span class="dot"></span> 12 Students Online</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="syllabus-view" class="hidden">
+            <nav class="dash-nav">
+                <div class="nav-left">
+                    <button class="back-btn" onclick="goBackToDashboard()"><i class="ri-arrow-left-line"></i> Back</button>
+                    <div class="logo">Syllabus<span>AI</span></div>
+                </div>
+            </nav>
+
+            <div class="dashboard-container split-view">
+                <div class="upload-panel">
+                    <h2>Select Subject</h2>
+                    <p style="color: #94a3b8; margin-bottom: 20px;">Choose a subject to load the AI Tutor.</p>
+                    
+                    <div class="subject-list">
+                        <div class="subject-row">
+                            <button class="sub-btn" onclick="loadSubject('VLSI Design')"><i class="ri-cpu-line"></i> VLSI Design</button>
+                        </div>
+                        <div class="subject-row">
+                            <button class="sub-btn" onclick="loadSubject('ITC')"><i class="ri-signal-tower-line"></i> Info Theory (ITC)</button>
+                        </div>
+                        <div class="subject-row">
+                            <button class="sub-btn" onclick="loadSubject('Electromagnetics')"><i class="ri-wireless-charging-line"></i> Electromagnetics</button>
+                        </div>
+                        <div class="subject-row">
+                            <button class="sub-btn" onclick="loadSubject('Embedded Systems')"><i class="ri-microscope-line"></i> Embedded Systems</button>
+                        </div>
+                    </div>
+
+                    <div id="active-status" class="status-box hidden">
+                        <i class="ri-check-double-line"></i> 
+                        <span id="current-subject-name">Subject Loaded</span>
+                    </div>
+                </div>
+
+                <div class="chat-panel">
+                    <div class="chat-header">
+                        <h2>AI Tutor</h2>
+                        <button class="clear-chat" onclick="clearChat()">Clear Chat</button>
+                    </div>
+                    <div id="chat-box" class="chat-box">
+                        <div class="message bot-msg">Select a subject from the left to start studying!</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="user-question" placeholder="Ask 'What are the main modules?'..." disabled>
+                        <button id="send-btn" onclick="askGroqSyllabus()" disabled><i class="ri-send-plane-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="notes-view" class="hidden">
+            <nav class="dash-nav">
+                <div class="nav-left">
+                    <button class="back-btn" onclick="goBackToDashboard()"><i class="ri-arrow-left-line"></i> Back</button>
+                    <div class="logo">Note<span>Gen</span></div>
+                </div>
+            </nav>
+
+            <div class="dashboard-container split-view">
+                <div class="subject-sidebar">
+                    <h3>Subjects</h3>
+                    <button class="rag-sub-btn active" onclick="loadSubjectResources('VLSI Design', this)"><i class="ri-cpu-line"></i> VLSI Design</button>
+                    <button class="rag-sub-btn" onclick="loadSubjectResources('ITC', this)"><i class="ri-signal-tower-line"></i> ITC</button>
+                    <button class="rag-sub-btn" onclick="loadSubjectResources('Electromagnetics', this)"><i class="ri-wireless-charging-line"></i> EMT</button>
+                    <button class="rag-sub-btn" onclick="loadSubjectResources('Embedded Systems', this)"><i class="ri-microscope-line"></i> Embedded</button>
+                </div>
+
+                <div class="notes-main-area">
+                    <h2 id="note-subject-title">VLSI Design</h2>
+                    <div class="resource-section">
+                        <h3><i class="ri-magic-line"></i> Custom Note Generator</h3>
+                        <p>Select a topic from the syllabus to generate a study note instantly:</p>
+                        <div class="topic-tags" id="syllabus-topic-list"></div>
+                        <div id="ai-note-display" class="ai-output-box hidden"></div>
+                    </div>
+                    <div class="resource-section">
+                        <h3><i class="ri-download-cloud-2-line"></i> Downloads & Resources</h3>
+                        <div class="file-grid" id="note-file-list"></div>
+                        <div class="link-buttons" style="margin-top: 15px;">
+                            <button class="resource-btn" onclick="searchWeb('notes')"><i class="ri-google-fill"></i> Find More Notes</button>
+                            <button class="resource-btn" onclick="searchWeb('qp')"><i class="ri-file-history-line"></i> Previous QPs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="qp-view" class="hidden">
+            <nav class="dash-nav">
+                <div class="nav-left">
+                    <button class="back-btn" onclick="goBackToDashboard()"><i class="ri-arrow-left-line"></i> Back</button>
+                    <div class="logo">QP<span>Predict</span></div>
+                </div>
+            </nav>
+        
+            <div class="dashboard-container split-view">
+                <div class="subject-sidebar">
+                    <h3>Select Subject</h3>
+                    <button class="rag-sub-btn active" onclick="loadQPAnalysis('VLSI Design', this)"><i class="ri-cpu-line"></i> VLSI Design</button>
+                    <button class="rag-sub-btn" onclick="loadQPAnalysis('ITC', this)"><i class="ri-signal-tower-line"></i> ITC</button>
+                    <button class="rag-sub-btn" onclick="loadQPAnalysis('Electromagnetics', this)"><i class="ri-wireless-charging-line"></i> EMT</button>
+                    <button class="rag-sub-btn" onclick="loadQPAnalysis('Embedded Systems', this)"><i class="ri-microscope-line"></i> Embedded</button>
+                </div>
+        
+                <div class="notes-main-area">
+                    <h2 id="qp-subject-title">VLSI Design Analysis</h2>
+                    <p style="color: #94a3b8; margin-bottom: 20px;">Based on 2019-2024 Question Papers</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="icon-box red"><i class="ri-fire-line"></i></div>
+                            <div><h3>Module 2 & 5</h3><small>Highest Weightage</small></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="icon-box blue"><i class="ri-repeat-line"></i></div>
+                            <div><h3>12 Questions</h3><small>Repeated >3 Times</small></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="icon-box green"><i class="ri-percent-line"></i></div>
+                            <div><h3>85% Pass</h3><small>Probability</small></div>
+                        </div>
+                    </div>
+        
+                    <div class="resource-section">
+                        <h3><i class="ri-alert-line"></i> Most Repeated Questions</h3>
+                        <div id="repeated-questions-list" class="questions-list"></div>
+                    </div>
+        
+                    <div class="resource-section">
+                        <h3><i class="ri-magic-line"></i> AI Exam Predictor</h3>
+                        <button class="generate-btn" onclick="generatePredictedPaper()"><i class="ri-file-settings-line"></i> Generate Predicted Question Paper</button>
+                        <div id="prediction-output" class="ai-output-box hidden" style="margin-top:15px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-view" class="hidden">
+            <nav class="dash-nav">
+                <div class="nav-left">
+                    <button class="back-btn" onclick="goBackToDashboard()"><i class="ri-arrow-left-line"></i> Back</button>
+                    <div class="logo">Quiz<span>Master</span></div>
+                </div>
+            </nav>
+
+            <div class="dashboard-container split-view">
+                <div class="subject-sidebar">
+                    <h3>Choose Challenge</h3>
+                    <button class="rag-sub-btn active" onclick="loadQuiz('VLSI Design', this)"><i class="ri-cpu-line"></i> VLSI Design</button>
+                    <button class="rag-sub-btn" onclick="loadQuiz('ITC', this)"><i class="ri-signal-tower-line"></i> ITC</button>
+                    <button class="rag-sub-btn" onclick="loadQuiz('Electromagnetics', this)"><i class="ri-wireless-charging-line"></i> EMT</button>
+                    <button class="rag-sub-btn" onclick="loadQuiz('Embedded Systems', this)"><i class="ri-microscope-line"></i> Embedded</button>
+                </div>
+
+                <div class="notes-main-area" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <div id="quiz-start-screen" class="quiz-card text-center">
+                        <div class="icon-large"><i class="ri-gamepad-line"></i></div>
+                        <h2 id="quiz-subject-title">VLSI Design Challenge</h2>
+                        <p>3 Questions: Easy • Medium • Hard</p>
+                        <button class="start-quiz-btn" onclick="startQuiz()">Start Quiz</button>
+                    </div>
+
+                    <div id="quiz-question-screen" class="quiz-card hidden">
+                        <div class="quiz-header">
+                            <span id="q-difficulty" class="badge-easy">Easy</span>
+                            <span id="q-counter">1/3</span>
+                        </div>
+                        <h3 id="q-text">Question Text</h3>
+                        <div class="options-grid" id="q-options"></div>
+                    </div>
+
+                    <div id="quiz-result-screen" class="quiz-card hidden text-center">
+                        <div id="score-icon" class="icon-large"><i class="ri-trophy-line"></i></div>
+                        <h2>Quiz Complete!</h2>
+                        <div class="score-display">You Scored <span id="final-score">0</span>/3</div>
+                        <div class="ai-feedback-box">
+                            <h4><i class="ri-robot-line"></i> AI Study Analysis</h4>
+                            <p id="analysis-text">analyzing...</p>
+                        </div>
+                        <button class="start-quiz-btn secondary" onclick="resetQuiz()">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill-barter-view" class="hidden">
+    <nav class="dash-nav">
+        <div class="nav-left">
+            <button class="back-btn" onclick="goBackToDashboard()"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="logo">Skill<span>Barter</span></div>
+        </div>
+        <div class="user-profile" style="margin-right: 20px;">
+            <div class="coin-badge" title="Earn credits by teaching!">
+                <i class="ri-coin-line"></i> <span id="user-credits">120</span> Credits
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container split-view">
+        <div class="subject-sidebar" style="min-width: 320px;">
+            <h3><i class="ri-user-settings-line"></i> My Identity</h3>
+            
+            <div class="input-group">
+                <label style="color:#94a3b8; font-size:0.8rem;">MY NAME</label>
+                <input type="text" id="my-name" placeholder="Enter your name..." class="dark-input">
+            </div>
+
+            <div class="input-group">
+                <label style="color:#94a3b8; font-size:0.8rem;">I CAN TEACH</label>
+                <input type="text" id="my-skill" placeholder="e.g. Python, Web Dev" class="dark-input">
+            </div>
+            
+            <div class="input-group">
+                <label style="color:#94a3b8; font-size:0.8rem;">I WANT TO LEARN</label>
+                <input type="text" id="my-need" placeholder="e.g. Graphic Design" class="dark-input">
+            </div>
+
+            <button class="generate-btn" onclick="updateBarterProfile()">
+                <i class="ri-refresh-line"></i> Find Matches
+            </button>
+
+            <hr style="border-color: var(--border); margin: 20px 0;">
+
+            <h3><i class="ri-medal-line"></i> My Achievements</h3>
+            <div class="badges-container">
+                <div class="profile-badge" title="Early Adopter"><i class="ri-vip-crown-fill"></i></div>
+                <div class="profile-badge locked" title="Teach 10 Sessions"><i class="ri-fire-fill"></i></div>
+                <div class="profile-badge locked" title="5 Star Rating"><i class="ri-star-smile-fill"></i></div>
+            </div>
+        </div>
+
+        <div class="notes-main-area" style="position: relative;">
+            
+            <div id="discovery-view">
+                <div class="view-header">
+                    <h2>Live Market</h2>
+                    <span id="match-indicator" class="badge">0 Matches Found</span>
+                </div>
+                <div id="barter-grid" class="barter-grid">
+                    </div>
+            </div>
+
+            <div id="room-view" class="hidden">
+                <div class="room-header">
+                    <div class="peer-info">
+                        <img id="room-peer-img" src="" class="avatar-small">
+                        <div>
+                            <h3 id="room-peer-name">Session with Rahul</h3>
+                            <span class="status-text"><span class="status-dot online"></span> Live Now</span>
+                        </div>
+                    </div>
+                    <div class="room-actions">
+                        <button class="resource-btn danger" onclick="endSession()">
+                            <i class="ri-close-circle-line"></i> End Session
+                        </button>
+                    </div>
+                </div>
+
+                <div class="meet-scheduler">
+                    <div class="meet-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" width="40"></div>
+                    <div class="meet-info">
+                        <h4>Google Meet Integration</h4>
+                        <p>Schedule a video call instantly for this session.</p>
+                    </div>
+                    <button class="meet-btn" onclick="window.open('https://meet.google.com/new', '_blank')">
+                        <i class="ri-video-add-line"></i> Create Meeting
+                    </button>
+                </div>
+
+                <div class="chat-container">
+                    <div id="barter-chat-box" class="chat-messages">
+                        <div class="system-msg">Session Started. Say Hello! 👋</div>
+                    </div>
+                    <div class="chat-input-row">
+                        <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleChatKey(event)">
+                        <button class="send-chat-btn" onclick="sendChatMessage()"><i class="ri-send-plane-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="feedback-modal" class="modal-overlay">
+        <div class="modal-content text-center">
+            <div class="icon-large"><i class="ri-thumb-up-line" style="color:#4ade80;"></i></div>
+            <h2>Session Completed!</h2>
+            <p>How was your learning experience with <strong id="feedback-peer-name">Rahul</strong>?</p>
+            
+            <div class="star-rating">
+                <i class="ri-star-line" onclick="rateSession(1, this)"></i>
+                <i class="ri-star-line" onclick="rateSession(2, this)"></i>
+                <i class="ri-star-line" onclick="rateSession(3, this)"></i>
+                <i class="ri-star-line" onclick="rateSession(4, this)"></i>
+                <i class="ri-star-line" onclick="rateSession(5, this)"></i>
+            </div>
+
+            <textarea id="feedback-comment" class="dark-input" placeholder="Write a short review... (e.g. Great explanation!)" rows="3" style="margin-top:15px;"></textarea>
+            
+            <button class="submit-btn" onclick="submitFeedback()">Submit & Earn Credits</button>
+        </div>
+    </div>
+</section>
+
+    <div id="selection-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            <h2>Setup Profile</h2>
+            <form id="setup-form">
+                <div class="input-group">
+                    <label>Department</label>
+                    <select id="dept-select" required>
+                        <option value="ECE">ECE</option>
+                        <option value="CSE">CSE</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Semester</label>
+                    <select id="sem-select" required>
+                        <option value="S6">S6</option>
+                        <option value="S4">S4</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Enter ProCorner</button>
+            </form>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
