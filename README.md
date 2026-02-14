@@ -1,420 +1,128 @@
 <p align="center">
-  <img src="./img.png" alt="Project Banner" width="100%">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="ProCorner Banner" width="100%" style="border-radius: 20px;">
 </p>
 
-# [Project Name] 🎯
+ProCorner | To make easier the life of ktu engineering students.
+Basic Details
+Team Name: InnovateHer
+Team Members
+Member 1: Bhadra Krishnan - Nss College of Engineering,Palakkad
 
-## Basic Details
+Member 2: Mufeedha  - Nss College of Engineering,Palakkad
 
-### Team Name: [Name]
 
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
 
-### Hosted Project Link
-[mention your project hosted link here]
+Hosted Project Link
+https://procorner-innovateher.netlify.app/
 
-### Project Description
-[2-3 lines about what your project does]
+Project Description
+ProCorner is an AI powered academic platform designed to simplify exam preparation by aligning study materials strictly with the official syllabus and generating exam focused practice questions. It provides personalized performance tracking and adaptive study plans to help students improve efficiently. The platform also features a unique peer matching skill barter system, enabling students to exchange knowledge and strengthen weaker subjects through collaborative learning
 
-### The Problem statement
-[What problem are you solving?]
+The Problem statement
+Students struggle with exam preparation due to scattered materials, poor syllabus alignment, lack of performance insights, and limited collaborative learning opportunities. There is a need for an integrated AI platform that aligns content strictly with the syllabus, provides structured exam-focused support, tracks performance, and enables peer matching with skill barter to promote mutual learning and knowledge exchange
 
-### The Solution
-[How are you solving it?]
+The Solution
+Our solution is an integrated AI-powered academic platform that aligns textbooks with the syllabus, generates exam-focused practice, tracks performance, and creates structured study plans, while uniquely enabling a peer matching system with a skill barter feature where students exchange knowledge in their strong subjects to improve weaker areas through mutual learning.
 
----
+Technical Details
+Technologies/Components Used
+For Software:
 
-## Technical Details
+Languages used: HTML5, CSS3, JavaScript (ES6+)
 
-### Technologies/Components Used
+AI Models: Groq API (Llama-3.3-70b-versatile) for content generation and reasoning.
 
-**For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+Libraries used: Remix Icons (UI), Google Fonts (Outfit).
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+Tools used: VS Code, Git, GitHub, Netlify (Deployment).
 
----
+Features
+ Syllabus Extractor: Chat with your syllabus context to understand modules instantly.
 
-## Features
+ Notes Analyzer (NoteGen): AI-powered summary generator that creates structured study notes from topic keywords.
 
-List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+QP analyzer: Analyzes past years' trends to highlight "High Weightage" modules and repeated questions.
 
----
+ Quiz Mode: Instantly generates Easy, Medium, and Hard MCQs with AI feedback.
 
-## Implementation
+ Skill Barter Network: A P2P ecosystem with "Smart Matching" algorithms, live session requests, and a credit-based reward system.
 
-### For Software:
+Competitive Exam Cracker: Dedicated roadmap and resources for competitive exams.
 
-#### Installation
-```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
-```
+Study Planner: Integrated scheduling tool to track academic goals.
 
-#### Run
-```bash
-[Run commands - e.g., npm start, python app.py]
-```
+Implementation
+Installation & Run
+Since ProCorner is a client-side web application, it requires no backend server setup.It uses grok API to run 
 
-### For Hardware:
+Clone the Repository
 
-#### Components Required
-[List all components needed with specifications]
+Bash
+git clone :https://github.com/krishnabhadra/ProCORNER
+cd ProCORNER
 
-#### Circuit Setup
-[Explain how to set up the circuit]
+Configure API Key
 
----
+Create a file named config.js in the root folder and added the groq API key
+JavaScript
+const CONFIG = {
+    GROQ_API_KEY: "your_api_key_here"
+};
+Run Locally
 
-## Project Documentation
+Open index.html in your browser.
 
-### For Software:
+OR use Live Server in VS Code.
 
-#### Screenshots (Add at least 3)
+Project Documentation
+Screenshots
+<img src="main screen.png" width="500">
+<img src="features.png" width="500">
+<img src="skill barter.png" width="500">
+Diagrams
+System Architecture:
+<img src="architecture diagram.png" width="500">
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Project Demo
+Video
+https://youtu.be/iGnMKOm5XFA
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
-#### Diagrams
+AI Tools Used
+We utilized AI to accelerate development and enhance functionality:
 
-**System Architecture:**
+Tool Used: Groq API (Llama-3.3-70b)
+Purpose:
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+Core Feature: Powering the Syllabus Chatbot, Note Generator, and Quiz Logic.
 
-**Application Workflow:**
+Development: Code optimization for the matchmaking algorithm.
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+Key Prompts Used:
 
----
+"Generate a structured note for VLSI Design: Concept, Key Points, Example."
 
-### For Hardware:
+"Create a predicted question paper for Embedded Systems based on high weightage topics."
 
-#### Schematic & Circuit
+Percentage of AI-generated code: ~40% (Boilerplate and Logic Assistance)
 
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+Human Contributions:
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+UI/UX Design and CSS animations.
 
-#### Build Photos
+"Smart Match" Algorithm logic implementation.
 
-![Team](Add photo of your team here)
+Session lifecycle management (Alarm, Feedback, Credits).
 
-![Components](Add photo of your components here)
-*List out all components shown*
+Integration of all modules into a single "OS" experience.
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+Team Contributions
+Mufeedha: Frontend Architecture, Dashboard Design, Skill Barter UI & Logic.
 
-![Final](Add photo of final product here)
-*Explain the final build*
+Bhadra Krishnan: AI Integration (Groq API), Syllabus & QP Analyzer Logic, Quiz Mode Implementation.
 
----
-
-## Additional Documentation
-
-### For Web Projects with Backend:
-
-#### API Documentation
-
-**Base URL:** `https://api.yourproject.com`
-
-##### Endpoints
-
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
-
-**POST /api/endpoint**
-- **Description:** [What it does]
-- **Request Body:**
-```json
-{
-  "field1": "value1",
-  "field2": "value2"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Operation completed"
-}
-```
-
-[Add more endpoints as needed...]
-
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
-
----
-
-### For Hardware Projects:
-
-#### Bill of Materials (BOM)
-
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
-
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
-
----
-
-### For Scripts/CLI Tools:
-
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
-
-## Project Demo
-
-### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
-
-*Explain what the video demonstrates - key features, user flow, technical highlights*
-
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
-
----
-
-## AI Tools Used (Optional - For Transparency Bonus)
-
-If you used AI tools during development, document them here for transparency:
-
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
-
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
-
-**Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
-
-**Percentage of AI-generated code:** [Approximately X%]
-
-**Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
-
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
-
----
-
-## Team Contributions
-
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
-
----
-
-## License
-
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
-
----
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 Made with ❤️ at TinkerHub
