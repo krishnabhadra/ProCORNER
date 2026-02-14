@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="ProCorner Banner" width="100%" style="border-radius: 20px;">
+<img src="img.png" alt="ProCorner Banner" width="100%" style="border-radius: 20px;">
 </p>
 
 ProCorner | To make easier the life of ktu engineering students.
@@ -86,7 +86,7 @@ System Architecture:
 
 Project Demo
 Video
-
+https://youtu.be/iGnMKOm5XFA?si=9W9-Oau4gS-gS-z-
 
 
 AI Tools Used
@@ -124,5 +124,6 @@ Bhadra Krishnan: AI Integration (Groq API), Syllabus & QP Analyzer Logic, Quiz M
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 Made with ❤️ at TinkerHub
