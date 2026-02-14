@@ -3,9 +3,14 @@
 </p>
 
 ProCorner | To make easier the life of ktu engineering students.
+
 Basic Details
+
 Team Name: InnovateHer
+
 Team Members
+
+
 Member 1: Bhadra Krishnan - Nss College of Engineering,Palakkad
 
 Member 2: Mufeedha  - Nss College of Engineering,Palakkad
@@ -127,3 +132,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 
 Made with ❤️ at TinkerHub
+
